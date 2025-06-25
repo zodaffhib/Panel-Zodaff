@@ -3,19 +3,31 @@
 body {
   margin: 0;
   padding: 0;
+  background: #0d0d0d;
   font-family: 'Share Tech Mono', monospace;
   color: #ff0033;
-  background: #0d0d0d;
   overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+canvas#matrix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
 
 .container {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 2;
-  padding: 30px 20px;
-  max-width: 800px;
-  margin: auto;
   text-align: center;
+  width: 90%;
+  max-width: 500px;
 }
 
 h1 {
@@ -23,7 +35,6 @@ h1 {
   margin-bottom: 30px;
   color: #ff0033;
   font-weight: 700;
-  letter-spacing: 1px;
   text-shadow: 0 0 10px #ff0033;
   text-transform: uppercase;
 }
@@ -109,11 +120,11 @@ input:checked + .slider:before {
 .desc {
   color: #ff6677;
   font-size: 14px;
-  margin-top: 25px;
+  margin-top: 20px;
 }
 
 footer {
-  margin-top: 40px;
+  margin-top: 20px;
   color: #ff4444;
   font-size: 12px;
 }
