@@ -4,90 +4,66 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Share Tech Mono', monospace;
-  color: #b3e5ff;
-  background: #0d1117;
+  color: #f2f2f2;
+  background: #000000;
   overflow: hidden;
 }
 
-body::before {
-  content: '';
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: url('https://www.transparenttextures.com/patterns/cubes.png');
-  opacity: 0.03;
-  z-index: 1;
-}
-
-.matrix-bg {
+canvas#matrix {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 0;
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(0, 255, 0, 0.05),
-    rgba(0, 255, 0, 0.05) 2px,
-    transparent 2px,
-    transparent 4px
-  );
-  animation: scroll 10s linear infinite;
-}
-
-@keyframes scroll {
-  from { background-position: 0 0; }
-  to { background-position: 0 100%; }
 }
 
 .container {
   position: relative;
-  z-index: 2;
-  padding: 30px 20px;
+  z-index: 1;
+  padding: 40px 20px;
   max-width: 800px;
   margin: auto;
   text-align: center;
 }
 
 h1 {
-  font-size: 2.2em;
+  font-size: 2.3em;
   margin-bottom: 30px;
-  color: #00e0ff;
-  font-weight: 700;
+  color: #ff0033;
+  font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
-  text-shadow: 0 0 2px #002d3a;
 }
 
 .panel {
-  background: #1c2331;
-  border: 2px solid #003366;
+  background: #111;
+  border: 2px solid #ff0033;
   border-radius: 12px;
   padding: 25px;
   margin-bottom: 30px;
-  box-shadow: 0 0 15px #001e2d;
+  box-shadow: 0 0 10px #ff003355;
 }
 
 .panel h2 {
-  color: #b3e5ff;
-  margin-bottom: 15px;
+  color: #f2f2f2;
+  margin-bottom: 20px;
+  font-size: 1.2em;
 }
 
 .function {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #10151c;
-  margin: 12px 0;
+  background: #1a1a1a;
+  margin: 15px 0;
   padding: 12px;
   border-radius: 8px;
-  border-left: 4px solid #FFD700;
+  border-left: 4px solid #ff0033;
 }
 
 .function-name {
   color: #ffffff;
   font-weight: bold;
-  font-size: 0.95em;
+  font-size: 1em;
 }
 
 .toggle-switch {
@@ -105,11 +81,9 @@ h1 {
 .slider {
   position: absolute;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #444;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #333;
   border-radius: 34px;
   transition: 0.4s;
 }
@@ -121,13 +95,13 @@ h1 {
   width: 20px;
   left: 3px;
   bottom: 3px;
-  background-color: #FFD700;
+  background-color: #ff0033;
   transition: 0.4s;
   border-radius: 50%;
 }
 
 input:checked + .slider {
-  background-color: #FFD70044;
+  background-color: #ff003355;
 }
 
 input:checked + .slider:before {
@@ -135,13 +109,13 @@ input:checked + .slider:before {
 }
 
 .desc {
-  color: #88c0d0;
+  color: #999;
   font-size: 14px;
   margin-top: 25px;
 }
 
 footer {
   margin-top: 40px;
-  color: #555;
+  color: #444;
   font-size: 12px;
 }
