@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Panel ZODA FF</title>
+  <title>PANEL ZODA FF</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="matrix-bg"></div>
+  <canvas id="matrix"></canvas>
 
   <div class="container">
     <h1>PANEL ZODA FF</h1>
 
     <div class="panel">
-      <h2>⚙️ FUNCIONES PRO</h2>
+      <h2>FUNCIONES AVANZADAS</h2>
 
       <div class="function">
         <span class="function-name">AIMBOT</span>
@@ -48,12 +48,46 @@
       </div>
     </div>
 
-    <p class="desc">🔒 Panel visual externo de sensibilidad. 100% seguro, sin conexión directa con Free Fire.</p>
+    <p class="desc">Panel de sensibilidad externa. Totalmente visual. No requiere permisos root ni acceso al juego.</p>
 
     <footer>
       <p>#ZODAFF</p>
-      <p>&copy; 2025 Zoda FF Panel iOS</p>
+      <p>&copy; 2025 Zoda FF iOS</p>
     </footer>
   </div>
+
+  <!-- SCRIPT MATRIX ANIMATION -->
+  <script>
+    const canvas = document.getElementById('matrix');
+    const ctx = canvas.getContext('2d');
+
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+
+    const letters = '01';
+    const fontSize = 14;
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+
+    function draw() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#ff0033';
+      ctx.font = fontSize + 'px monospace';
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = letters.charAt(Math.floor(Math.random() * letters.length));
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+
+    setInterval(draw, 33);
+  </script>
 </body>
 </html>
