@@ -1,32 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
 body {
-  background: #0d0d0d;
+  margin: 0;
+  padding: 0;
+  font-family: 'Share Tech Mono', monospace;
   color: #ff0033;
+  background: #0d0d0d;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  padding: 30px 20px;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #ff0033;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px #ff0033;
+  text-transform: uppercase;
 }
 
 .panel {
   background: #130f0f;
   border: 2px solid #ff0033;
-  box-shadow: 0 0 15px #ff0033aa;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 20px #ff0033aa;
+}
+
+.panel h2 {
+  color: #ff0033;
+  margin-bottom: 15px;
+  font-size: 1.4em;
+  text-shadow: 0 0 4px #ff0033aa;
 }
 
 .function {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: #1a0f0f;
+  margin: 12px 0;
+  padding: 12px;
+  border-radius: 8px;
   border-left: 4px solid #ff0033;
   box-shadow: 0 0 5px #ff0033;
 }
 
 .function-name {
   color: #ffffff;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 50px;
+  height: 26px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: #330000;
+  border-radius: 34px;
+  transition: 0.4s;
 }
 
 .slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
   background-color: #ff0033;
+  transition: 0.4s;
+  border-radius: 50%;
 }
 
 input:checked + .slider {
-  background-color: #ff003344;
+  background-color: #ff003355;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+.desc {
+  color: #ff6677;
+  font-size: 14px;
+  margin-top: 25px;
+}
+
+footer {
+  margin-top: 40px;
+  color: #ff4444;
+  font-size: 12px;
 }
